@@ -2,9 +2,14 @@
 
 A zero dependency way to switch between plural, singular, camel case, snake case and kebab case
 
+## Install
+
+lein: `[swlkr/word "0.1.0"]`
+deps: `{swlkr/word {:mvn/version "0.1.0"}}`
+
+
 ## How Do I Use This?
 
-[swlkr/word "0.1.0"]
 
 ```clojure
 (ns how-to-use
