@@ -3,4 +3,6 @@
   :url "https://github.com/swlkr/word"
   :license {:name "MIT License"
             :url "https://opensource.org/licenses/MIT"}
+  :scm {:name "git"
+        :url "https://github.com/swlkr/word"}
   :dependencies [[org.clojure/clojure "1.9.0"]])
