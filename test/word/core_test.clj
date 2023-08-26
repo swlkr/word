@@ -42,6 +42,8 @@
     (is (= "octopus" (word/singular "octopuses"))))
   (testing "octopi"
     (is (= "octopus" (word/singular "octopi"))))
+  (testing "houses"
+    (is (= "house" (word/singular "houses"))))
 
   (testing "add-exception"
     (let [_ (word/add-exception "moose")]
@@ -68,5 +70,3 @@
 
   (testing "keyword created-at"
     (is (= :created_at (word/snake :created-at)))))
-
-

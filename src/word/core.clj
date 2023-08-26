@@ -49,6 +49,7 @@
 (def singular-patterns
   [[#"(?i)ies$" "y"]
    [#"(?i)(\w)\1(es)$" "$1"]
+   [#"(?i)(house)(s)$" "$1"]
    [#"(?i)(tch|us)(es)$" "$1"]
    [#"(?i)(ss)$" "$1"]
    [#"(?i)s$" ""]
