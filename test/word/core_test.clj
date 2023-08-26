@@ -4,7 +4,11 @@
 
 (deftest plural-test
   (testing "aardvark"
-    (is (= "aardvarks" (word/plural "aardvark")))))
+    (is (= "aardvarks" (word/plural "aardvark"))))
+  (testing "virus"
+    (is (= "viruses" (word/plural "virus"))))
+  (testing "octopus"
+    (is (= "octopi" (word/plural "octopus")))))
 
 (deftest singular-test
   (testing "quizzes"
@@ -31,6 +35,9 @@
   (testing "users"
     (is (= "user" (word/singular "users"))))
 
+  (testing "viruses"
+    (is (= "virus" (word/singular "viruses"))))
+
   (testing "add-exception"
     (let [_ (word/add-exception "moose")]
       (is (= "moose" (word/plural "moose")))))
@@ -38,7 +45,10 @@
   (testing "remove-exception"
     (let [_ (word/add-exception "moose")
           _ (word/remove-exception "moose")]
-      (is (= false (word/exception? "moose"))))))
+      (is (= false (word/exception? "moose")))))
+
+  (testing "Paris should be uncountable"
+    (is (= "Paris" (word/singular "Paris")))))
 
 (deftest kebab
   (testing "created_at"
