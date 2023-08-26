@@ -51,7 +51,8 @@
    [#"(?i)(\w)\1(es)$" "$1"]
    [#"(?i)(tch|us)(es)$" "$1"]
    [#"(?i)(ss)$" "$1"]
-   [#"(?i)s$" ""]])
+   [#"(?i)s$" ""]
+   [#"(?i)(octop)i$" "$1us"]])
 
 (defn singular [s]
   (if (and (string? s)

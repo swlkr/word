@@ -38,6 +38,11 @@
   (testing "viruses"
     (is (= "virus" (word/singular "viruses"))))
 
+  (testing "octopuses"
+    (is (= "octopus" (word/singular "octopuses"))))
+  (testing "octopi"
+    (is (= "octopus" (word/singular "octopi"))))
+
   (testing "add-exception"
     (let [_ (word/add-exception "moose")]
       (is (= "moose" (word/plural "moose")))))
