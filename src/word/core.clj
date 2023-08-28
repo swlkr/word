@@ -1,7 +1,7 @@
 (ns word.core
   (:require [clojure.string :as string]))
 
-(def exceptions (atom #{}))
+(def exceptions (atom #{"paris"}))
 
 (defn exception? [s]
   (when (string? s)
@@ -20,7 +20,8 @@
 
 (def plural-patterns
   [[#"(?i)(ax|test)is$" "$1es"]
-   [#"(?i)(octop|vir)us$" "$1i]"]
+   [#"(?i)(octop)us$" "$1i"]
+   [#"(?i)(virus)$" "$1es"]
    [#"(?i)(alias|status)$" "$1es"]
    [#"(?i)(bu)s$" "$1ses"]
    [#"(?i)(buffal|tomat)o$" "$1oes"]
@@ -48,9 +49,11 @@
 (def singular-patterns
   [[#"(?i)ies$" "y"]
    [#"(?i)(\w)\1(es)$" "$1"]
-   [#"(?i)(tch)(es)$" "$1"]
+   [#"(?i)(house)(s)$" "$1"]
+   [#"(?i)(tch|us)(es)$" "$1"]
    [#"(?i)(ss)$" "$1"]
-   [#"(?i)s$" ""]])
+   [#"(?i)s$" ""]
+   [#"(?i)(octop)i$" "$1us"]])
 
 (defn singular [s]
   (if (and (string? s)
